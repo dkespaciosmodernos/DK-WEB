@@ -1,0 +1,5 @@
+// Mostrar siempre todas las secciones y listas sin invisibilidad
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll("section, ul li");
+  elements.forEach(el => el.classList.add("visible"));
+});

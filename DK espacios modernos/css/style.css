@@ -1,0 +1,210 @@
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 0; 
+  padding: 0; 
+  background: #f5f5f5; 
+}
+
+header {
+  background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+  background-size: 800% 800%;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  animation: gradientShift 15s ease infinite, fadeIn 2s ease-in-out;
+}
+
+nav {
+  background: #2a2a2a;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #6a11cb;
+  transition: width 0.3s ease;
+}
+nav a:hover { color: #6a11cb; }
+nav a:hover::after { width: 100%; }
+
+section { 
+  padding: 40px; 
+  opacity: 1;        
+  transform: none;   
+}
+
+h2 { 
+  color: #1e3c72; 
+  margin-bottom: 20px; 
+}
+
+footer {
+  background: #1e3c72;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.btn-whatsapp, .btn-cta {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+}
+.btn-whatsapp:hover, .btn-cta:hover {
+  background: #128C7E;
+  transform: scale(1.1);
+}
+.btn-cta {
+  background: #6a11cb;
+  margin-top: 20px;
+}
+
+.logo {
+  max-width: 250px;
+  margin: 20px auto;
+  display: block;
+  animation: bounce 3s infinite;
+}
+
+ul li {
+  margin-bottom: 10px;
+  opacity: 1;        
+  transform: none;   
+}
+
+.social-icons a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #1e3c72;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover { color: #6a11cb; }
+
+/* Tarjetas de servicios */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: black;
+}
+.service-card:hover { transform: translateY(-5px); }
+.service-card i {
+  font-size: 40px;
+  color: #6a11cb;
+  margin-bottom: 15px;
+}
+
+/* Colores diferentes para cada tarjeta */
+.service-card:nth-child(1) { background: #f0f8ff; }
+.service-card:nth-child(2) { background: #f9f9e6; }
+.service-card:nth-child(3) { background: #e6f9f0; }
+.service-card:nth-child(4) { background: #f9e6f6; }
+
+/* Forzar texto negro en secciones */
+#servicios, #faq, #blog, #contacto {
+  color: black;
+}
+#servicios h2, #faq h2, #blog h2, #contacto h2 {
+  color: black;
+}
+
+/* Blog grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.blog-item {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.3s ease;
+  color: black;
+}
+.blog-item:hover {
+  transform: translateY(-5px);
+}
+.blog-item h3 {
+  color: #6a11cb;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.blog-item p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* FAQ grid */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.faq-item {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  color: black;
+}
+.faq-item:hover {
+  transform: translateY(-5px);
+}
+.faq-item h3 {
+  color: #6a11cb;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.faq-item p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Animaciones */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
